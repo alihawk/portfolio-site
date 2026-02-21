@@ -1,0 +1,27 @@
+{
+  "name": "ali-mahmood-portfolio-v2",
+  "version": "2.0.0",
+  "description": "Portfolio website for Muhammad Ali Mahmood - Software Engineer & AI Practitioner",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx serve .",
+    "dev": "npx serve . -l 3000",
+    "deploy:vercel": "npx vercel",
+    "deploy:netlify": "npx netlify deploy --prod"
+  },
+  "keywords": [
+    "portfolio",
+    "software-engineer",
+    "ai-engineer",
+    "web-development",
+    "react",
+    "spring-boot"
+  ],
+  "author": "Muhammad Ali Mahmood <muhammad.ali.hawk@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://alimahmood.dev",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alihawk/portfolio"
+  }
+}
