@@ -913,6 +913,11 @@
             gap: 0.5rem;
         }
 
+        .section-header.centered .section-eyebrow {
+            justify-content: center;
+            width: 100%;
+        }
+
         .section-eyebrow::before {
             content: '';
             width: 30px;
@@ -928,11 +933,21 @@
             letter-spacing: -0.02em;
         }
 
+        .section-header.centered .section-title {
+            text-align: center;
+        }
+
         .section-subtitle {
             color: var(--text-secondary);
             font-size: 1.1rem;
             margin-top: 1rem;
             max-width: 600px;
+        }
+
+        .section-header.centered .section-subtitle {
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         /* Reveal Animation */
@@ -980,6 +995,106 @@
             transform: scale(1);
         }
 
+        /* New Cool Animations */
+        .reveal-rotate {
+            opacity: 0;
+            transform: rotate(-10deg) scale(0.8);
+            transition: all 1s var(--transition-bounce);
+        }
+
+        .reveal-rotate.active {
+            opacity: 1;
+            transform: rotate(0deg) scale(1);
+        }
+
+        .reveal-flip {
+            opacity: 0;
+            transform: perspective(1000px) rotateY(90deg);
+            transition: all 1s var(--transition-bounce);
+        }
+
+        .reveal-flip.active {
+            opacity: 1;
+            transform: perspective(1000px) rotateY(0deg);
+        }
+
+        .reveal-slide-up {
+            opacity: 0;
+            transform: translateY(100px) scale(0.9);
+            transition: all 1s var(--transition-elastic);
+        }
+
+        .reveal-slide-up.active {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+
+        .reveal-zoom {
+            opacity: 0;
+            transform: scale(0.3) rotate(180deg);
+            transition: all 1.2s var(--transition-elastic);
+        }
+
+        .reveal-zoom.active {
+            opacity: 1;
+            transform: scale(1) rotate(0deg);
+        }
+
+        .reveal-bounce {
+            opacity: 0;
+            transform: translateY(-100px) scale(0.5);
+            transition: all 1s var(--transition-bounce);
+        }
+
+        .reveal-bounce.active {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+
+        .reveal-slide-left {
+            opacity: 0;
+            transform: translateX(-150px) rotate(-15deg);
+            transition: all 1s var(--transition-elastic);
+        }
+
+        .reveal-slide-left.active {
+            opacity: 1;
+            transform: translateX(0) rotate(0deg);
+        }
+
+        .reveal-slide-right {
+            opacity: 0;
+            transform: translateX(150px) rotate(15deg);
+            transition: all 1s var(--transition-elastic);
+        }
+
+        .reveal-slide-right.active {
+            opacity: 1;
+            transform: translateX(0) rotate(0deg);
+        }
+
+        .reveal-fade-up {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s var(--transition-smooth);
+        }
+
+        .reveal-fade-up.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal-spiral {
+            opacity: 0;
+            transform: rotate(720deg) scale(0.1);
+            transition: all 1.5s var(--transition-elastic);
+        }
+
+        .reveal-spiral.active {
+            opacity: 1;
+            transform: rotate(0deg) scale(1);
+        }
+
         /* Stagger children */
         .stagger-children > * {
             opacity: 0;
@@ -992,6 +1107,65 @@
         .stagger-children.active > *:nth-child(3) { transition-delay: 0.2s; opacity: 1; transform: translateY(0); }
         .stagger-children.active > *:nth-child(4) { transition-delay: 0.3s; opacity: 1; transform: translateY(0); }
         .stagger-children.active > *:nth-child(5) { transition-delay: 0.4s; opacity: 1; transform: translateY(0); }
+        .stagger-children.active > *:nth-child(6) { transition-delay: 0.5s; opacity: 1; transform: translateY(0); }
+
+        /* Advanced stagger for more children */
+        .stagger-grid > * {
+            opacity: 0;
+            transform: translateY(40px) scale(0.9);
+            transition: all 0.8s var(--transition-bounce);
+        }
+
+        .stagger-grid.active > *:nth-child(1) { transition-delay: 0s; opacity: 1; transform: translateY(0) scale(1); }
+        .stagger-grid.active > *:nth-child(2) { transition-delay: 0.1s; opacity: 1; transform: translateY(0) scale(1); }
+        .stagger-grid.active > *:nth-child(3) { transition-delay: 0.2s; opacity: 1; transform: translateY(0) scale(1); }
+        .stagger-grid.active > *:nth-child(4) { transition-delay: 0.3s; opacity: 1; transform: translateY(0) scale(1); }
+        .stagger-grid.active > *:nth-child(5) { transition-delay: 0.4s; opacity: 1; transform: translateY(0) scale(1); }
+        .stagger-grid.active > *:nth-child(6) { transition-delay: 0.5s; opacity: 1; transform: translateY(0) scale(1); }
+        .stagger-grid.active > *:nth-child(7) { transition-delay: 0.6s; opacity: 1; transform: translateY(0) scale(1); }
+        .stagger-grid.active > *:nth-child(8) { transition-delay: 0.7s; opacity: 1; transform: translateY(0) scale(1); }
+
+        /* Floating animation for cards */
+        .float-on-scroll {
+            transition: transform 0.3s ease;
+        }
+
+        .float-on-scroll:hover {
+            transform: translateY(-10px);
+        }
+
+        /* Pulse animation for important elements */
+        .pulse-on-scroll {
+            animation: none;
+        }
+
+        .pulse-on-scroll.active {
+            animation: gentlePulse 2s ease-in-out infinite;
+        }
+
+        @keyframes gentlePulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+        }
+
+        /* Wave animation for text */
+        .wave-text {
+            display: inline-block;
+        }
+
+        .wave-text.active .wave-letter {
+            animation: wave 1.5s ease-in-out infinite;
+        }
+
+        .wave-letter {
+            display: inline-block;
+            animation-delay: calc(var(--i) * 0.1s);
+        }
+
+        @keyframes wave {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
         .stagger-children.active > *:nth-child(6) { transition-delay: 0.5s; opacity: 1; transform: translateY(0); }
 
         /* ===== ABOUT SECTION ===== */
@@ -2466,6 +2640,7 @@
         <a href="#" class="logo">ali.dev</a>
         <ul class="nav-center">
             <li><a href="#about">About</a></li>
+            <li><a href="#hero">Vision</a></li>
             <li><a href="#impact">Impact</a></li>
             <li><a href="#services">Services</a></li>
             <li><a href="#experience">Experience</a></li>
@@ -2486,6 +2661,7 @@
     <!-- Mobile Menu -->
     <div class="mobile-menu" id="mobileMenu">
         <a href="#about" onclick="closeMobileMenu()">About</a>
+        <a href="#hero" onclick="closeMobileMenu()">Vision</a>
         <a href="#impact" onclick="closeMobileMenu()">Impact</a>
         <a href="#services" onclick="closeMobileMenu()">Services</a>
         <a href="#experience" onclick="closeMobileMenu()">Experience</a>
@@ -2493,47 +2669,6 @@
         <a href="#skills" onclick="closeMobileMenu()">Skills</a>
         <a href="#contact" onclick="closeMobileMenu()">Contact</a>
     </div>
-
-    <!-- Hero Section -->
-    <section class="hero" id="hero">
-        <div class="hero-grid-bg"></div>
-        <div class="hero-orb hero-orb-1"></div>
-        <div class="hero-orb hero-orb-2"></div>
-        <div class="hero-content">
-            <div class="hero-eyebrow">
-                <span class="status-dot"></span>
-                Open to opportunities — Based in Netherlands
-            </div>
-            <h1 class="hero-title">
-                <span class="line">Crafting <span class="gradient">Intelligent</span></span>
-                <span class="line">Systems at Scale</span>
-            </h1>
-            <p class="hero-subtitle">
-                Backend Engineer & AI Practitioner with 3+ years building production systems, 
-                LLM applications, and scalable microservices. Currently pursuing MSc in AI 
-                at Radboud University as an Erasmus Mundus Scholar.
-            </p>
-            <div class="hero-cta-group">
-                <a href="#projects" class="btn btn-primary">
-                    Explore My Work
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M5 12h14M12 5l7 7-7 7"/>
-                    </svg>
-                </a>
-                <a href="#contact" class="btn btn-secondary">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-                        <polyline points="22,6 12,13 2,6"/>
-                    </svg>
-                    Get In Touch
-                </a>
-            </div>
-        </div>
-        <div class="hero-scroll">
-            <div class="mouse"></div>
-            <span>Scroll to explore</span>
-        </div>
-    </section>
 
     <!-- About Section -->
     <section class="about" id="about">
@@ -2600,6 +2735,47 @@
                 </div>
             </div>
         </div>
+        <div class="hero-scroll">
+            <div class="mouse"></div>
+            <span>Scroll to explore</span>
+        </div>
+    </section>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-grid-bg"></div>
+        <div class="hero-orb hero-orb-1"></div>
+        <div class="hero-orb hero-orb-2"></div>
+        <div class="hero-content">
+            <div class="hero-eyebrow">
+                <span class="status-dot"></span>
+                Open to opportunities — Based in Netherlands
+            </div>
+            <h1 class="hero-title">
+                <span class="line">Crafting <span class="gradient">Intelligent</span></span>
+                <span class="line">Systems at Scale</span>
+            </h1>
+            <p class="hero-subtitle">
+                Backend Engineer & AI Practitioner with 3+ years building production systems, 
+                LLM applications, and scalable microservices. Currently pursuing MSc in AI 
+                at Radboud University as an Erasmus Mundus Scholar.
+            </p>
+            <div class="hero-cta-group">
+                <a href="#projects" class="btn btn-primary">
+                    Explore My Work
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </a>
+                <a href="#contact" class="btn btn-secondary">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                        <polyline points="22,6 12,13 2,6"/>
+                    </svg>
+                    Get In Touch
+                </a>
+            </div>
+        </div>
     </section>
 
     <!-- Impact Section -->
@@ -2651,7 +2827,7 @@
             <p class="section-subtitle">Three specialized domains with deep technical proficiency</p>
         </div>
         <div class="services-grid stagger-children">
-            <div class="service-card reveal">
+            <div class="service-card reveal-flip float-on-scroll">
                 <div class="service-card-inner">
                     <div class="service-header">
                         <div class="service-icon">⚙️</div>
@@ -2677,7 +2853,7 @@
                     </div>
                 </div>
             </div>
-            <div class="service-card reveal">
+            <div class="service-card reveal-flip float-on-scroll">
                 <div class="service-card-inner">
                     <div class="service-header">
                         <div class="service-icon">🧠</div>
@@ -2703,7 +2879,7 @@
                     </div>
                 </div>
             </div>
-            <div class="service-card reveal">
+            <div class="service-card reveal-flip float-on-scroll">
                 <div class="service-card-inner">
                     <div class="service-header">
                         <div class="service-icon">🤖</div>
@@ -2952,7 +3128,7 @@
                             </svg>
                             Repository
                         </a>
-                        <a href="#" target="_blank" class="project-link">
+                        <a href="https://legacy-facade.vercel.app/" target="_blank" class="project-link">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
                                 <polyline points="15 3 21 3 21 9"/>
@@ -3101,7 +3277,7 @@
                             </svg>
                             Repository
                         </a>
-                        <a href="#" target="_blank" class="project-link">
+                        <a href="https://sunflower-dashboard.vercel.app/" target="_blank" class="project-link">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
                                 <polyline points="15 3 21 3 21 9"/>
@@ -3378,7 +3554,7 @@
         });
 
         // ===== PRELOADER TAGLINE ANIMATION =====
-        const tagline = "ENGINEER • INNOVATOR • CREATOR";
+        const tagline = "ENGINEER • MANAGER • CREATOR";
         const taglineEl = document.getElementById('preloaderTagline');
         let delay = 1200;
 
